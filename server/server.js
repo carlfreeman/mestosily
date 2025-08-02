@@ -16,25 +16,25 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Проверка reCAPTCHA
-async function verifyRecaptcha(token) {
-    try {
-        const response = await axios.post(
-            'https://www.google.com/recaptcha/api/siteverify',
-            null,
-            {
-                params: {
-                    secret: process.env.RECAPTCHA_SECRET,
-                    response: token
-                }
-            }
-        );
-        console.log(`Капча пройдена`);
-        return response.data.success;
-    } catch (error) {
-        console.error('reCAPTCHA error:', error);
-        return false;
-    }
-}
+// async function verifyRecaptcha(token) {
+//     try {
+//         const response = await axios.post(
+//             'https://www.google.com/recaptcha/api/siteverify',
+//             null,
+//             {
+//                 params: {
+//                     secret: process.env.RECAPTCHA_SECRET,
+//                     response: token
+//                 }
+//             }
+//         );
+//         console.log(`Капча пройдена`);
+//         return response.data.success;
+//     } catch (error) {
+//         console.error('reCAPTCHA error:', error);
+//         return false;
+//     }
+// }
 
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,

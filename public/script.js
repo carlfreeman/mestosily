@@ -93,8 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         name: fields.name.element.value.trim(),
         phone: fields.phone.element.value.trim(),
         message: fields.message.element.value.trim(),
-        'g-recaptcha-response': grecaptcha.getResponse()
       };
+      //   'g-recaptcha-response': grecaptcha.getResponse()
+      // };
       
       const response = await fetch('/api/send-email', {
         method: 'POST',
