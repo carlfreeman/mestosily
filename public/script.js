@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // Валидация reCAPTCHA
-    if (!grecaptcha.getResponse()) {
-      fields.recaptcha.error.textContent = 'Пожалуйста, пройдите reCaptcha';
-      fields.recaptcha.error.classList.add('visible');
-      isValid = false;
-    } else {
-      fields.recaptcha.error.classList.remove('visible');
-    }
+    // // Валидация reCAPTCHA
+    // if (!grecaptcha.getResponse()) {
+    //   fields.recaptcha.error.textContent = 'Пожалуйста, пройдите reCaptcha';
+    //   fields.recaptcha.error.classList.add('visible');
+    //   isValid = false;
+    // } else {
+    //   fields.recaptcha.error.classList.remove('visible');
+    // }
     
     if (!isValid) {
       // Прокрутка к первой ошибке

@@ -52,13 +52,13 @@ const transporter = nodemailer.createTransport({
 app.post('/api/send-email', async (req, res) => {
     const { name, phone, message, 'g-recaptcha-response': recaptcha } = req.body;
 
-    // Валидация reCAPTCHA
-    if (process.env.NODE_ENV === 'production') {
-        const isHuman = await verifyRecaptcha(recaptcha);
-        if (!isHuman) {
-            return res.status(400).json({ error: 'Пожалуйста, пройдите reCaptcha' });
-        }
-    }
+    // // Валидация reCAPTCHA
+    // if (process.env.NODE_ENV === 'production') {
+    //     const isHuman = await verifyRecaptcha(recaptcha);
+    //     if (!isHuman) {
+    //         return res.status(400).json({ error: 'Пожалуйста, пройдите reCaptcha' });
+    //     }
+    // }
 
     const mailOptions = {
         from: `"Место Силы" <${process.env.EMAIL_USER}>`,
