@@ -2,12 +2,33 @@ require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Проверка reCAPTCHA
+async function verifyRecaptcha(token) {
+    try {
+        const response = await axios.post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            null,
+            {
+                params: {
+                    secret: process.env.RECAPTCHA_SECRET,
+                    response: token
+                }
+            }
+        );
+        return response.data.success;
+    } catch (error) {
+        console.error('reCAPTCHA error:', error);
+        return false;
+    }
+}
 
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -17,13 +38,19 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-    ...(process.env.NODE_ENV === 'development' && {
-        tls: { rejectUnauthorized: false }
-    })
+    tls: {
+        rejectUnauthorized: process.env.NODE_ENV === 'production'
+    }
 });
 
-app.post('/send-email', async (req, res) => {
-    const { name, phone, message } = req.body;
+app.post('/api/send-email', async (req, res) => {
+    const { name, phone, message, 'g-recaptcha-response': recaptcha } = req.body;
+
+    // Валидация reCAPTCHA
+    const isHuman = await verifyRecaptcha(recaptcha);
+    if (!isHuman) {
+        return res.status(400).json({ error: 'Пожалуйста, подтвердите, что вы не робот' });
+    }
 
     const mailOptions = {
         from: `"Место Силы" <${process.env.EMAIL_USER}>`,
@@ -42,13 +69,20 @@ app.post('/send-email', async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
-        res.status(200).json({ message: 'Сообщение отправлено' });
+        res.json({ message: 'Сообщение отправлено' });
     } catch (error) {
         console.error('Ошибка отправки:', error);
         res.status(500).json({ error: 'Ошибка при отправке сообщения' });
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Сервер запущен на порту ${PORT}`);
-});
+// Обслуживание статических файлов
+if (process.env.NODE_ENV === 'production') {
+    const path = require('path');
+    app.use(express.static(path.join(__dirname, '../public')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/index.html'));
+    });
+}
+
+module.exports = app;
