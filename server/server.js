@@ -50,7 +50,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/api/send-email', async (req, res) => {
-    const { name, phone, message, 'g-recaptcha-response': recaptcha } = req.body;
+    const { name, phone, message } = req.body;
 
     // // Валидация reCAPTCHA
     // if (process.env.NODE_ENV === 'production') {

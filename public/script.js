@@ -107,8 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (response.ok) {
         showSuccessMessage();
-        form.reset();
-        grecaptcha.reset();
+        formreset();
       } else {
         throw new Error(result.error || 'Ошибка сервера');
       }
@@ -120,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  function formreset() {
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+  }
+
   function showSuccessMessage() {
     alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
   }
