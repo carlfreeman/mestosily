@@ -44,3 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const parallaxBg = document.querySelector('.parallax-bg');
+    const header = document.querySelector('.parallax-header');
+
+    if (parallaxBg && header) {
+    const updateParallax = () => {
+        const scrollPosition = window.pageYOffset;
+        const headerHeight = header.offsetHeight;
+
+        if (scrollPosition < headerHeight) {
+            const translateY = scrollPosition * 0.25;
+            parallaxBg.style.transform = `translateY(${translateY}px)`;
+
+            const opacity = 1 - (scrollPosition / headerHeight * 0.7);
+            parallaxBg.style.opacity = opacity > 0.2 ? opacity : 0.2;
+        }
+    };
+
+    window.addEventListener('scroll', updateParallax);
+    window.addEventListener('resize', updateParallax);
+    }
+});

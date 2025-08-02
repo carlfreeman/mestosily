@@ -62,11 +62,8 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-/* Шапка */
 header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-                url('images/head.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,25 +96,64 @@ header p {
     animation: fadeInUp 1.5s ease;
 }
 
-/* Секции */
+.parallax-header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -80;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('images/bg.webp') center/cover no-repeat;
+    will-change: transform;
+    transition: transform 0.1s ease-out, opacity 0.1s ease;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
 .section {
     display: flex;
+    position: relative;
+    z-index: 10;
+    background: white;
     min-height: 80vh;
     padding: 5rem 10%;
+    padding-top: 150px; 
+    padding-bottom: 5rem;
     align-items: center;
     will-change: transform;
+    transition: margin-top 0.5s ease-out;
+}
+
+#section1 {
+    box-shadow: 0 -50px 40px rgba(0,0,0,0.4);
 }
 
 .section.reverse {
     position: relative;
     overflow: hidden;
     background: linear-gradient(
-        95deg, 
-        rgba(255, 255, 255, 0.1) 50%, 
+        90deg, 
+        rgba(255, 255, 255, 0.1) 40%, 
         rgba(26, 45, 38, 0.08) 100%
     );
 }
-
 
 .text-block, .image-block {
     flex: 1;
@@ -166,7 +202,6 @@ p {
     color: var(--text);
 }
 
-/* Форма */
 .contact-form {
     background: linear-gradient(to right, var(--primary), var(--dark));
     padding: 6rem 10%;
@@ -236,7 +271,6 @@ button:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Футер */
 footer {
     background: var(--dark);
     color: var(--light);
@@ -402,7 +436,7 @@ html {
         padding: 1rem 5%;
         min-height: auto;
     }
-    
+
     .reverse {
         flex-direction: column-reverse;
     }
