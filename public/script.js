@@ -176,6 +176,5 @@ function maintainImageRatios() {
   });
 }
 
-// Вызываем при загрузке и ресайзе
 window.addEventListener('load', maintainImageRatios);
 window.addEventListener('resize', maintainImageRatios);
