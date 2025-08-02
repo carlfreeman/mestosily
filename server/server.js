@@ -77,6 +77,7 @@ app.post('/api/send-email', async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
+        console.log(`Отправлено: ${name} - ${phone} : ${message}`);
         res.json({ message: 'Сообщение отправлено' });
     } catch (error) {
         console.error('Ошибка отправки:', error);
