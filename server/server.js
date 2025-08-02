@@ -28,6 +28,7 @@ async function verifyRecaptcha(token) {
                 }
             }
         );
+        console.log(`Капча пройдена`);
         return response.data.success;
     } catch (error) {
         console.error('reCAPTCHA error:', error);

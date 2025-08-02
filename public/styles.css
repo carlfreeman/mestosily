@@ -276,13 +276,6 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.logo-circle span {
-    font-size: 3.5rem;
-    color: var(--dark);
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-}
-
 .social-icons {
     display: flex;
     gap: 1rem;
