@@ -174,7 +174,7 @@ header p {
 .image-block img {
     max-width: 100%;
     height: auto;
-    max-height: 100vh;
+    max-height: 95vh;
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: var(--transition);
