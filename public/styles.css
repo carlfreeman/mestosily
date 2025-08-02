@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "Loreley";
+  src: url("fonts/Loreley Antiqua.ttf") format("truetype");
+  font-display: swap;
+}
+
+.loreley {
+  font-family: "Loreley", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Caslon";
+  src: url("fonts/Caslon Antique.ttf") format("truetype");
+  font-display: swap;
+
+}
+
+.caslon {
+  font-family: "Caslon", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "ctet";
+  src: url("fonts/ctetb.ttf") format("truetype");
+  font-display: swap;
+
+}
+
+.ctet {
+  font-family: "ctet", Arial, sans-serif;
+}
+
 :root {
     --primary: #2e5e4e;
     --primary-light: #3d7a67;
@@ -19,22 +51,22 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Calson', serif;
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Calson', serif;
     font-weight: 700;
 }
 
 /* Шапка */
 header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                url('images/head.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,6 +80,7 @@ header {
 }
 
 header h1 {
+    font-family: "Loreley", Times;
     font-size: 5.5rem;
     color: var(--white);
     text-transform: uppercase;
@@ -169,8 +202,11 @@ button {
     background: var(--accent);
     color: var(--dark);
     border: none;
-    padding: 16px 40px;
-    font-size: 1.2rem;
+    padding: 16px 44px;
+    font-family: "Caslon", serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
@@ -181,8 +217,9 @@ button {
 
 button:hover {
     background: var(--accent-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Футер */
@@ -199,13 +236,14 @@ footer {
     color: var(--accent);
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Calson', serif;
     text-align: center;
 }
 
 .footer-block p {
     color: var(--light);
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .logo-block {
@@ -347,3 +385,42 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Font Awesome - Only needed components */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('../fonts/fa-solid-900.woff2') format('woff2');
+}
+
+/* Solid Icons */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('../fonts/fa-solid-900.woff2') format('woff2');
+}
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+.fa-map-marker-alt:before {
+  content: "\f3c5";
+}
+.fa-phone:before {
+  content: "\f095";
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+/* Only include icons you actually use */
+.fa-home:before { content: "\f015"; }
+.fa-user:before { content: "\f007"; }
+.fa-envelope:before { content: "\f0e0"; }
