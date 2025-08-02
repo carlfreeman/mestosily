@@ -11,11 +11,11 @@ services:
       - key: EMAIL_PORT
         value: 465
       - key: EMAIL_USER
-        value: your_email@mail.ru
+        value: mestosilytarusatest@mail.ru
       - key: EMAIL_PASS
-        value: your_password
+        value: GLnYW7y7BXqjKWrXC2h6
       - key: RECIPIENT_EMAIL
-        value: recipient@example.com
+        value: carlfreeman875@gmail.com
       - key: RECAPTCHA_SECRET
         value: your_recaptcha_secret
       - key: NODE_ENV
