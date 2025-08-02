@@ -157,3 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateParallax);
     }
 });
+
+function maintainImageRatios() {
+  document.querySelectorAll('.image-block').forEach(block => {
+    const img = block.querySelector('img');
+    if (img) {
+      const naturalRatio = img.naturalHeight / img.naturalWidth;
+      const currentRatio = block.offsetHeight / block.offsetWidth;
+      
+      if (currentRatio > naturalRatio) {
+        img.style.width = '100%';
+        img.style.height = 'auto';
+      } else {
+        img.style.height = '100%';
+        img.style.width = 'auto';
+      }
+    }
+  });
+}
+
+// Вызываем при загрузке и ресайзе
+window.addEventListener('load', maintainImageRatios);
+window.addEventListener('resize', maintainImageRatios);
