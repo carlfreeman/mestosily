@@ -56,7 +56,7 @@ app.post('/api/send-email', async (req, res) => {
     if (process.env.NODE_ENV === 'production') {
         const isHuman = await verifyRecaptcha(recaptcha);
         if (!isHuman) {
-            return res.status(400).json({ error: 'Пожалуйста, подтвердите, что вы не робот' });
+            return res.status(400).json({ error: 'Пожалуйста, пройдите reCaptcha' });
         }
     }
 

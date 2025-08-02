@@ -42,6 +42,7 @@
     --white: #ffffff;
     --shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --error: #e6d3a7;
 }
 
 * {
@@ -124,17 +125,17 @@ header p {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .section {
     display: flex;
     position: relative;
     z-index: 10;
-    background: white;
+    background: var(--white);
     min-height: 80vh;
     padding: 5rem 10%;
-    padding-top: 150px; 
+    padding-top: 100px; 
     padding-bottom: 5rem;
     align-items: center;
     will-change: transform;
@@ -214,6 +215,10 @@ p {
     margin: 0 auto;
 }
 
+.form-container .form-group * {
+    width: 100%;
+}
+
 .contact-form h2 {
     color: var(--accent);
     margin-bottom: 2.5rem;
@@ -239,6 +244,7 @@ input, textarea {
     font-size: 1.1rem;
     background: rgba(255, 255, 255, 0.9);
     transition: var(--transition);
+    resize: none;
 }
 
 input:focus, textarea:focus {
@@ -266,7 +272,7 @@ button {
 
 button:hover {
     background: var(--accent-dark);
-    color: white;
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -366,7 +372,7 @@ footer {
     justify-content: center;
     gap: 10px;
     background: var(--primary);
-    color: white;
+    color: var(--white);
     padding: 15px 16px;
     border-radius: 50px;
     font-family: "ctet", serif;
@@ -384,7 +390,7 @@ footer {
 .contact-btn svg {
     width: 24px;
     height: 24px;
-    stroke: white;
+    stroke: var(--white);
 }
 
 .contact-btn span {
@@ -537,3 +543,36 @@ html {
 .fa-home:before { content: "\f015"; }
 .fa-user:before { content: "\f007"; }
 .fa-envelope:before { content: "\f0e0"; }
+
+
+.error-message {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  height: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.error-message.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+input:invalid, textarea:invalid {
+  border-color: #e74c3c;
+}
+
+input:valid, textarea:valid {
+  border-color: #2ecc71;
+}
+
+/* Стили для состояний при фокусе */
+input:focus:invalid, textarea:focus:invalid {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+input:focus:valid, textarea:focus:valid {
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}

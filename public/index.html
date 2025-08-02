@@ -66,12 +66,26 @@
     <section class="contact-form" id="contact-form">
         <div class="form-container">
             <h2>Обратная связь</h2>
-            <form id="booking-form">
-                <input type="text" id="name" placeholder="ФИО" required>
-                <input type="tel" id="phone" placeholder="Телефон" required pattern="\+?[0-9\s\-\(\)]{7,}">
-                <textarea id="message" placeholder="Комментарии" rows="4"></textarea>
-                <div class="g-recaptcha" data-sitekey="6LcSGJgrAAAAAH9DoG1fbZ63VdXySREuaPJl2TDo"></div>
-                <button type="submit">Отправить</button>
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Имя *" required maxlength="15" pattern="[А-Яа-яЁёA-Za-z\s]{2,}">
+                <div class="error-message" id="name-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <input type="tel" id="phone" placeholder="Телефон *" required maxlength="15" pattern="^\+?[0-9\s\-\(\)]{7,}$">
+                <div class="error-message" id="phone-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <textarea id="message" placeholder="Комментарий" maxlength="500"></textarea>
+                <div class="error-message" id="message-error"></div>
+              </div>
+              
+              <div class="g-recaptcha" data-sitekey="6LcSGJgrAAAAAH9DoG1fbZ63VdXySREuaPJl2TDo"></div>
+              <div class="error-message" id="recaptcha-error"></div>
+              
+              <button type="submit">Отправить</button>
             </form>
         </div>
     </section>
