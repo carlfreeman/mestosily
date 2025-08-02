@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌲</text></svg>">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Шапка -->
@@ -68,11 +69,12 @@
                 <input type="text" id="name" placeholder="ФИО" required>
                 <input type="tel" id="phone" placeholder="Телефон" required pattern="\+?[0-9\s\-\(\)]{7,}">
                 <textarea id="message" placeholder="Ваши пожелания и даты аренды" rows="4"></textarea>
-                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_KEY"></div>
+                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                 <button type="submit">Отправить заявку</button>
             </form>
         </div>
     </section>
+
 
 
     <!-- Футер -->

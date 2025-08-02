@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: mesto-sily
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    env: node
+    envVars:
+      - key: EMAIL_HOST
+        value: smtp.mail.ru
+      - key: EMAIL_PORT
+        value: 465
+      - key: EMAIL_USER
+        value: your_email@mail.ru
+      - key: EMAIL_PASS
+        value: your_password
+      - key: RECIPIENT_EMAIL
+        value: recipient@example.com
+      - key: RECAPTCHA_SECRET
+        value: your_recaptcha_secret
+      - key: NODE_ENV
+        value: production

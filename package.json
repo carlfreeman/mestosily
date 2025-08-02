@@ -3,34 +3,19 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
-    "build": "echo 'Build complete'"
+    "dev": "nodemon server/server.js"
   },
   "dependencies": {
-    "axios": "^1.11.0",
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "express": "^4.21.2",
-    "nodemailer": "^6.10.1"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
   "engines": {
     "node": ">=18.x"
-  },
-  "description": "",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carlfreeman/mestosily.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/carlfreeman/mestosily/issues"
-  },
-  "homepage": "https://github.com/carlfreeman/mestosily#readme"
+  }
 }

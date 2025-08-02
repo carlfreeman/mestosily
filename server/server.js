@@ -3,12 +3,17 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Проверка reCAPTCHA
 async function verifyRecaptcha(token) {
@@ -47,9 +52,11 @@ app.post('/api/send-email', async (req, res) => {
     const { name, phone, message, 'g-recaptcha-response': recaptcha } = req.body;
 
     // Валидация reCAPTCHA
-    const isHuman = await verifyRecaptcha(recaptcha);
-    if (!isHuman) {
-        return res.status(400).json({ error: 'Пожалуйста, подтвердите, что вы не робот' });
+    if (process.env.NODE_ENV === 'production') {
+        const isHuman = await verifyRecaptcha(recaptcha);
+        if (!isHuman) {
+            return res.status(400).json({ error: 'Пожалуйста, подтвердите, что вы не робот' });
+        }
     }
 
     const mailOptions = {
@@ -76,16 +83,11 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
-// Обслуживание статических файлов
-if (process.env.NODE_ENV === 'production') {
-    const path = require('path');
-    app.use(express.static(path.join(__dirname, '../public')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
-    });
-if (process.env.NODE_ENV !== 'production') {
-    app.use(express.static(path.join(__dirname, '../public')));
-}
-}
+// Serve index.html for all routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
-module.exports = app;
+app.listen(PORT, () => {
+    console.log(`Сервер запущен на порту ${PORT}`);
+});
