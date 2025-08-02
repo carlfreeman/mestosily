@@ -506,6 +506,19 @@ html {
     .contact-form {
         padding: 4rem 5%;
     }
+
+    .section .text-block {
+        padding-top: 0;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.7rem;
+        text-align: center;
+    }
 }
 
 @keyframes fadeInDown {
