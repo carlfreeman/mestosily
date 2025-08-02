@@ -17,6 +17,6 @@ services:
       - key: RECIPIENT_EMAIL
         value: carlfreeman875@gmail.com
       - key: RECAPTCHA_SECRET
-        value: 6LcSGJgrAAAAAGcTwTEzECDIDhhQUKlZj_Xveqh1
+        value: 6LfJFpgrAAAAAFIbY-AkoY-Hs4wmVrMR2TpgkCFs
       - key: NODE_ENV
         value: production

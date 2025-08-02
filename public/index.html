@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌲</text></svg>">
+    <link rel="icon" href="favicon.ico">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
@@ -64,13 +64,13 @@
     <!-- Форма -->
     <section class="contact-form">
         <div class="form-container">
-            <h2>Забронируйте ваш отдых</h2>
+            <h2>Обратная связь</h2>
             <form id="booking-form">
                 <input type="text" id="name" placeholder="ФИО" required>
                 <input type="tel" id="phone" placeholder="Телефон" required pattern="\+?[0-9\s\-\(\)]{7,}">
-                <textarea id="message" placeholder="Ваши пожелания и даты аренды" rows="4"></textarea>
-                <div class="g-recaptcha" data-sitekey="6LcSGJgrAAAAAH9DoG1fbZ63VdXySREuaPJl2TDo"></div>
-                <button type="submit">Отправить заявку</button>
+                <textarea id="message" placeholder="Комментарии" rows="4"></textarea>
+                <div class="g-recaptcha" data-sitekey="6LfJFpgrAAAAAI0XuMBBVUAHqbxZ_TZkPnoFf2zH"></div>
+                <button type="submit">Отправить</button>
             </form>
         </div>
     </section>
@@ -80,19 +80,16 @@
     <!-- Футер -->
     <footer>
         <div class="logo-block">
-            <div class="logo-circle">
-                <span>М</span>
-            </div>
-            <h3>Место Силы</h3>
+            <img src="images/logo.png" class="logo-circle">
         </div>
         <div class="footer-block">
             <h4>Контакты</h4>
             <p>+7 (495) 123-45-67</p>
-            <p>contact@mesto-sily.ru</p>
+            <p>mestosilytarusatest@mail.ru</p>
         </div>
-        <div class="footer-block">
+        <div class="footer-block adress">
             <h4>Адрес</h4>
-            <p>Калужская область, г. Таруса, ул. Лесная, 15</p>
+            <a href="https://yandex.ru/maps/-/CHX~j0oh" target="__blank"><p>Калужская область, г. Таруса</p></a>
         </div>
         <div class="footer-block social">
             <h4>Мы в соцсетях</h4>

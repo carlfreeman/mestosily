@@ -200,6 +200,7 @@ footer {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .footer-block p {
@@ -216,7 +217,7 @@ footer {
 .logo-circle {
     width: 80px;
     height: 80px;
-    background: var(--accent);
+    background: transparent;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -235,6 +236,19 @@ footer {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: center;
+}
+
+.adress a, a:hover, a:visited {
+  text-decoration: none !important;
+}
+
+.adress a:hover {
+  text-decoration: none;
+}
+
+.adress a:visited {
+  text-decoration: none;
 }
 
 .social-icons a {
