@@ -238,6 +238,10 @@ p {
     padding: 0;
 }
 
+#proslist p {
+    text-align: justify;
+}
+
 #proslist li {
     position: relative;
     padding-left: 1.5rem;
