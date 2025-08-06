@@ -154,6 +154,7 @@ header h1 {
     justify-content: center;
     text-align: justify;
     font-weight: 300;
+    letter-spacing: 0.03rem;
 }
 
 .image-block img {
@@ -356,7 +357,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: var(--white);
+    background: transparent;
     color: var(--accent-dark);
     padding: 15px 16px;
     border-radius: 50px;
