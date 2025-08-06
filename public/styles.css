@@ -65,7 +65,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'ctet', serif;
     font-weight: 300;
 }
@@ -131,6 +134,7 @@ header h1 {
 
 #section0 {
     box-shadow: 0 -50px 40px rgba(0,0,0,0.4);
+    height: 105vh;
 }
 
 .section.reverse {
@@ -143,9 +147,19 @@ header h1 {
     );
 }
 
-.text-block, .image-block {
+.section.reverse h2::after {
+    left: 60%;
+}
+
+
+.text-block,
+.image-block {
     flex: 1;
-    padding: 2rem;
+    padding: 1.5rem;
+}
+
+.image-block {
+    max-height: 75%;
 }
 
 .text-block {
@@ -154,7 +168,6 @@ header h1 {
     justify-content: center;
     text-align: justify;
     font-weight: 300;
-    letter-spacing: 0.03rem;
 }
 
 .image-block img {
@@ -181,23 +194,41 @@ h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
-    width: 80px;
+    left: 0%;
+    width: 40%;
     height: 4px;
     background: var(--accent);
 }
 
-p, li {
-    font-family: Georgia, Times;
-    font-size: 1.2rem;
-    color: var(--text);
+h3 {
+    color: var(--primary);
+    font-size: 2.3rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    position: relative;
 }
 
-#proslist, #pointslist {
+
+p,
+li {
+    font-family: Georgia, Times;
+    font-size: 1.4rem;
+    color: var(--text);
+    letter-spacing: 0.08rem;
+    font-weight: 100;
+}
+
+#proslist,
+#pointslist {
     text-align: center;
     padding: 5rem 10%;
     background-color: var(--white);
     display: block;
+}
+
+#proslist h2::after,
+#pointslist h2::after {
+    left: 30%;
 }
 
 .header {
@@ -213,13 +244,15 @@ p, li {
     margin-bottom: 2rem;
 }
 
-#proslist ul, #pointslist ul {
+#proslist ul,
+#pointslist ul {
     flex: 1;
     min-width: 300px;
     max-width: 45%;
     text-align: left;
     list-style-type: none;
     padding: 0;
+    padding-left: 5%;
 }
 
 li {
@@ -255,12 +288,17 @@ li:before {
     color: var(--accent);
 }
 
+.form-container h2::after {
+    content: none;
+}
+
 .form-group {
     margin-bottom: 1.2rem;
     width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
     font-family: sans-serif;
     padding: 15px 20px;
     border: none;
@@ -272,7 +310,8 @@ input, textarea {
     width: 100%;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     box-shadow: 0 0 0 3px var(--accent);
     background: var(--white);
@@ -320,6 +359,7 @@ footer {
 
 .footer-block p {
     color: var(--light);
+    font-size: ;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -400,7 +440,8 @@ footer {
     height: 1rem;
 }
 
-input:invalid, textarea:invalid {
+input:invalid,
+textarea:invalid {
     border: 1px solid var(--error);
 }
 
@@ -420,9 +461,11 @@ input:invalid, textarea:invalid {
 
 @media (max-width: 768px) {
     header h1 { font-size: 3.5rem; }
-    .section, .reverse { flex-direction: column; }
-    .text-block, .image-block { padding: 1.5rem; width: 100%; }
+    .section {flex-direction: column-reverse;}
+    .reverse { flex-direction: column; }
+    .text-block, .image-block { padding: 1.2rem; width: 100%; }
     h2 { font-size: 2.2rem; text-align: center; }
+    h3 { font-size: 2rem; text-align: justify; }
     #proslist ul, #pointslist ul { max-width: 100%; }
     .contact-btn span { display: none; }
     .contact-btn { padding: 12px; }
@@ -431,6 +474,6 @@ input:invalid, textarea:invalid {
 @media (max-width: 576px) {
     header h1 { font-size: 2.8rem; }
     .contact-form { padding: 4rem 5%; }
-    .section p { font-size: 1rem; }
+    .section p { font-size: 1.1rem; }
     h2 { font-size: 1.7rem; }
 }
