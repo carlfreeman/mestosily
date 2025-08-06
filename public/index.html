@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место Силы в Тарусе</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
@@ -65,7 +64,7 @@
 
     <section class="section" id="proslist">
         <h2 class="header">Удобства на территории</h2>
-        <div>
+        <div class="list-container">
             <ul>
                 <li>Дом на 8–10 человек</li>
                 <li>4 уютные спальни</li>
@@ -83,9 +82,9 @@
         </div>
     </section>
 
-    <section class="section" id="proslist">
+    <section class="section" id="pointslist">
         <h2 class="header">Точки интереса в округе</h2>
-        <div>
+        <div class="list-container">
             <ul>
                 <li>В 10 км – уютная Таруса с музеями, кафе и речными прогулками до Поленово</li>
                 <li>Мастер-классы, концерты и душевная атмосфера старинного русского купеческого городка</li>
@@ -94,7 +93,7 @@
                 <li>На машине до 30 минут - Парк Русский</li>
             </ul>
         </div>
-        <div>
+        <div class="text-block">
             <p>Это место, где время течёт медленно, а каждый день наполнен простыми радостями. Приезжайте отдыхать в любое время года – здесь всегда вам рады!</p>
         </div>
     </section>
@@ -102,7 +101,7 @@
     <section class="contact-form" id="contact-form">
         <div class="form-container">
             <h2>Обратная связь</h2>
-            <form id="contact-form" novalidate>
+            <form id="contactForm" novalidate>
               <div class="form-group">
                 <input type="text" id="name" placeholder="Имя *" required maxlength="15" pattern="[А-Яа-яЁёA-Za-z\s]{2,}">
                 <div class="error-message" id="name-error"></div>
@@ -126,15 +125,15 @@
     <footer>
         <div class="footer-block">
             <h4>Контакты</h4>
-            <p><span class="fas fa-phone"></span> +7 (495) 123-45-67</p>
+            <p><span class="fas fa-phone"></span> +7 (985) 481-20-76</p>
             <p><span class="fas fa-envelope"></span> mestosilytarusa@mail.ru</p>
         </div>
         <div class="footer-block adress">
             <h4>Адрес</h4>
-            <a href="https://yandex.ru/maps/-/CHX~j0oh" target="__blank"><p><span class="fas fa-map-marker-alt"></span> Калужская область, г. Таруса</p></a>
+            <a href="https://yandex.ru/maps/-/CHX~j0oh" target="_blank"><p><span class="fas fa-map-marker-alt"></span> Калужская область, г. Таруса</p></a>
         </div>
         <div class="logo-block">
-            <img src="images/logo.png" class="logo-circle">
+            <img src="images/logo.png" alt="Логотип" class="logo-circle">
         </div>
     </footer>
     <div class="copyright">
