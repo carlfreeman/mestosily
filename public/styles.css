@@ -208,17 +208,12 @@ p {
     color: var(--text);
 }
 
-#proslist,
-#interest {
+#proslist {
     text-align: center;
     justify-items: center;
     padding: 5rem 10%;
     background-color: var(--white);
     display: block; /* Change from flex to block */
-}
-
-#interest img {
-    max-width: 70%;
 }
 
 .head {
@@ -227,12 +222,11 @@ p {
     width: 100%;
 }
 
-#proslist > div,
-#interest > div { /* Container for the lists */
+#proslist > div { /* Container for the lists */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0;
 }
 
 #proslist ul {
