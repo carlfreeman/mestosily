@@ -11,11 +11,11 @@ services:
       - key: EMAIL_PORT
         value: 465
       - key: EMAIL_USER
-        value: mestosilytarusatest@mail.ru
+        value: mestosilytarusa@mail.ru
       - key: EMAIL_PASS
-        value: GLnYW7y7BXqjKWrXC2h6
+        value: U7dWfTTchOibKcniEVSk
       - key: RECIPIENT_EMAIL
-        value: carlfreeman875@gmail.com
+        value: carlfreeman875@gmail.com, mestosilytarusatest@mail.ru
       - key: RECAPTCHA_SECRET
         value: 6LcSGJgrAAAAAGcTwTEzECDIDhhQUKlZj_Xveqh1
       - key: NODE_ENV

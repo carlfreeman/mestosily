@@ -135,15 +135,15 @@ header p {
     z-index: 10;
     background: var(--white);
     min-height: 80vh;
-    padding: 5rem 10%;
-    padding-top: 100px; 
-    padding-bottom: 5rem;
+    padding: 2rem 5%;
+    padding-top: 50px; 
+    padding-bottom: 2rem;
     align-items: center;
     will-change: transform;
     transition: margin-top 0.5s ease-out;
 }
 
-#section1 {
+#section0 {
     box-shadow: 0 -50px 40px rgba(0,0,0,0.4);
 }
 
@@ -201,10 +201,70 @@ h2::after {
     background: var(--accent);
 }
 
+
 p {
     font-size: 1.2rem;
     max-width: 600px;
     color: var(--text);
+}
+
+#proslist {
+    text-align: center;
+    justify-items: center;
+    padding: 5rem 10%;
+    background-color: var(--white);
+    display: block; /* Change from flex to block */
+}
+
+.head {
+    margin-bottom: 3rem;
+    text-align: justify;
+    width: 100%;
+}
+
+#proslist > div { /* Container for the lists */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+#proslist ul {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    list-style-type: none;
+    margin-left: 5%;
+    padding: 0;
+}
+
+#proslist li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+#proslist li:before {
+    content: "•";
+    color: var(--accent);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+@media (max-width: 768px) {
+    #proslist > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #proslist ul {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 .contact-form {
@@ -427,7 +487,7 @@ html {
     }
     
     .section {
-        padding: 2rem 7%;
+        padding: 2rem 5%;
     }
 
     .contact-btn {
@@ -518,6 +578,10 @@ html {
     .section h2 {
         font-size: 1.7rem;
         text-align: center;
+    }
+
+    .section .head {
+        text-align: justify;
     }
 }
 

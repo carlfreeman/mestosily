@@ -15,26 +15,6 @@ app.use(express.json());
 // Serve static files
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Проверка reCAPTCHA
-// async function verifyRecaptcha(token) {
-//     try {
-//         const response = await axios.post(
-//             'https://www.google.com/recaptcha/api/siteverify',
-//             null,
-//             {
-//                 params: {
-//                     secret: process.env.RECAPTCHA_SECRET,
-//                     response: token
-//                 }
-//             }
-//         );
-//         console.log(`Капча пройдена`);
-//         return response.data.success;
-//     } catch (error) {
-//         console.error('reCAPTCHA error:', error);
-//         return false;
-//     }
-// }
 
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -52,20 +32,12 @@ const transporter = nodemailer.createTransport({
 app.post('/api/send-email', async (req, res) => {
     const { name, phone, message } = req.body;
 
-    // // Валидация reCAPTCHA
-    // if (process.env.NODE_ENV === 'production') {
-    //     const isHuman = await verifyRecaptcha(recaptcha);
-    //     if (!isHuman) {
-    //         return res.status(400).json({ error: 'Пожалуйста, пройдите reCaptcha' });
-    //     }
-    // }
-
     const mailOptions = {
         from: `"Место Силы" <${process.env.EMAIL_USER}>`,
         to: process.env.RECIPIENT_EMAIL,
-        subject: 'Новая заявка на аренду',
+        subject: 'Обратная связь',
         html: `
-            <h2>Новая заявка</h2>
+            <h2>Форма</h2>
             <p><strong>Имя:</strong> ${name}</p>
             <p><strong>Телефон:</strong> ${phone}</p>
             <p><strong>Сообщение:</strong></p>
